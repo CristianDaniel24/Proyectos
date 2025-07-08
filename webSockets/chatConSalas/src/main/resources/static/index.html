@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat WebSocket con Salas</title>
+</head>
+<body>
+<h2>Chat con salas (WebSocket)</h2>
+
+<label for="room">Sala:</label>
+<input id="room" type="text" value="general">
+<br><br>
+
+<label for="msg">Mensaje:</label>
+<input id="msg" type="text">
+<button onclick="sendMessage()">Enviar</button>
+
+<ul id="messages"></ul>
+
+<script>
+    const socket = new WebSocket("ws://localhost:8080/chat");
+
+    socket.onopen = () => {
+        console.log("Conectado al servidor WebSocket");
+    };
+
+    socket.onmessage = (event) => {
+        const li = document.createElement("li");
+        li.textContent = event.data;
+        document.getElementById("messages").appendChild(li);
+    };
+
+    function sendMessage() {
+        const room = document.getElementById("room").value;
+        const msg = document.getElementById("msg").value;
+
+        const payload = {
+            room: room,
+            message: msg
+        };
+
+        socket.send(JSON.stringify(payload));
+        document.getElementById("msg").value = "";
+    }
+</script>
+</body>
+</html>
