@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/message")
 public class MessageControllerImpl implements MessageController {
 
-  private MessageService service;
+  private final MessageService service;
+
+  public MessageControllerImpl(MessageService service) {
+    this.service = service;
+  }
 
   @Override
   public ResponseEntity<Iterable<MessageModel>> list() {

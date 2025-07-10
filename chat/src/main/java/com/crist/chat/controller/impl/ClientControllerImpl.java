@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/client")
 public class ClientControllerImpl implements ClientController {
 
-  private ClientService service;
+  private final ClientService service;
+
+  public ClientControllerImpl(ClientService service) {
+    this.service = service;
+  }
 
   @Override
   public ResponseEntity<Iterable<ClientModel>> list() {

@@ -23,6 +23,6 @@ public class ClientModel implements Serializable {
   @Column(name = "name", columnDefinition = "VARCHAR(250)", nullable = false)
   private String name;
 
-  @Column(name = "mail", columnDefinition = "VARCHAR(250)", nullable = false)
+  @Column(name = "mail", columnDefinition = "VARCHAR(250)", nullable = false, unique = true)
   private String mail;
 }

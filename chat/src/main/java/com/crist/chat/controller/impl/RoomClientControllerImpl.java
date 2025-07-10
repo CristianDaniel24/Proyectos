@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/roomClient")
 public class RoomClientControllerImpl implements RoomClientController {
 
-  private RoomClientService service;
+  private final RoomClientService service;
+
+  public RoomClientControllerImpl(RoomClientService service) {
+    this.service = service;
+  }
 
   @Override
   public ResponseEntity<Iterable<RoomClientModel>> list() {
