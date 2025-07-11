@@ -7,8 +7,4 @@ public interface MessageService {
   Iterable<MessageModel> list();
 
   MessageModel create(MessageModel message);
-
-  MessageModel read(Long id);
-
-  MessageModel delete(Long id);
 }

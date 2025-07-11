@@ -25,14 +25,4 @@ public class RoomClientServiceImpl implements RoomClientService {
     roomClient.setClient(null);
     return this.repository.save(roomClient);
   }
-
-  @Override
-  public RoomClientModel read(Long id) {
-    return null;
-  }
-
-  @Override
-  public RoomClientModel delete(Long id) {
-    return null;
-  }
 }
