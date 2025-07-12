@@ -19,22 +19,7 @@ public class RoomClientControllerImpl implements RoomClientController {
   }
 
   @Override
-  public ResponseEntity<Iterable<RoomClientModel>> list() {
-    return ResponseEntity.status(HttpStatus.OK).body(this.service.list());
-  }
-
-  @Override
   public ResponseEntity<RoomClientModel> create(RoomClientModel roomClient) {
     return ResponseEntity.status(HttpStatus.CREATED).body(this.service.create(roomClient));
-  }
-
-  @Override
-  public ResponseEntity<RoomClientModel> read(Long id) {
-    return ResponseEntity.status(HttpStatus.OK).body(this.service.read(id));
-  }
-
-  @Override
-  public ResponseEntity<RoomClientModel> delete(Long id) {
-    return ResponseEntity.status(HttpStatus.OK).body(this.service.delete(id));
   }
 }

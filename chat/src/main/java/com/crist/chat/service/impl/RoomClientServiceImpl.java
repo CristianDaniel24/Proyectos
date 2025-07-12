@@ -15,14 +15,7 @@ public class RoomClientServiceImpl implements RoomClientService {
   }
 
   @Override
-  public Iterable<RoomClientModel> list() {
-    return this.repository.findAll();
-  }
-
-  @Override
   public RoomClientModel create(RoomClientModel roomClient) {
-    roomClient.setRoom(null);
-    roomClient.setClient(null);
     return this.repository.save(roomClient);
   }
 }

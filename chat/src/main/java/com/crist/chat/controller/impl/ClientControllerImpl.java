@@ -19,22 +19,7 @@ public class ClientControllerImpl implements ClientController {
   }
 
   @Override
-  public ResponseEntity<Iterable<ClientModel>> list() {
-    return ResponseEntity.status(HttpStatus.OK).body(this.service.list());
-  }
-
-  @Override
   public ResponseEntity<ClientModel> create(ClientModel client) {
     return ResponseEntity.status(HttpStatus.CREATED).body(this.service.create(client));
-  }
-
-  @Override
-  public ResponseEntity<ClientModel> read(Long id) {
-    return ResponseEntity.status(HttpStatus.OK).body(this.service.read(id));
-  }
-
-  @Override
-  public ResponseEntity<ClientModel> delete(Long id) {
-    return ResponseEntity.status(HttpStatus.OK).body(this.service.delete(id));
   }
 }

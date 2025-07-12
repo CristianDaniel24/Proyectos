@@ -19,7 +19,7 @@ public class FlappyBirdService extends JPanel implements KeyListener {
    *
    * @param move Es la interfaz que contiene la logica de movimiento del juego y de su
    *     funcionamiento
-   * @param draw Es la interfaz que contiene los metodos que permiten darle un diseño del juego
+   * @param draw Es la interfaz que contiene los metodos que permiten darle un diseño al juego
    */
   public FlappyBirdService(MoveService move, DrawService draw) {
     this.move = move;

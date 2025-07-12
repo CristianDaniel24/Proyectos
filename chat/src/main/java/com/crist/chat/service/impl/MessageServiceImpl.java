@@ -21,7 +21,6 @@ public class MessageServiceImpl implements MessageService {
 
   @Override
   public MessageModel create(MessageModel message) {
-    message.setId(null);
     return this.repository.save(message);
   }
 }

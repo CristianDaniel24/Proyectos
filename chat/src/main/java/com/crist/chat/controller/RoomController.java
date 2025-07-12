@@ -13,10 +13,4 @@ public interface RoomController {
 
   @PostMapping(produces = APPLICATION_JSON_VALUE)
   ResponseEntity<RoomModel> create(@RequestBody RoomModel room);
-
-  @GetMapping(path = "/{id}", produces = APPLICATION_JSON_VALUE)
-  ResponseEntity<RoomModel> read(@PathVariable Long id);
-
-  @DeleteMapping(path = "/{id}", produces = APPLICATION_JSON_VALUE)
-  ResponseEntity<RoomModel> delete(@PathVariable Long id);
 }

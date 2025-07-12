@@ -27,14 +27,4 @@ public class RoomControllerImpl implements RoomController {
   public ResponseEntity<RoomModel> create(RoomModel room) {
     return ResponseEntity.status(HttpStatus.CREATED).body(this.service.create(room));
   }
-
-  @Override
-  public ResponseEntity<RoomModel> read(Long id) {
-    return ResponseEntity.status(HttpStatus.OK).body(this.service.read(id));
-  }
-
-  @Override
-  public ResponseEntity<RoomModel> delete(Long id) {
-    return ResponseEntity.status(HttpStatus.OK).body(this.service.delete(id));
-  }
 }
